@@ -34,12 +34,15 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Uncomment the next line to enable the admin
+     'django.contrib.admin',
+    # Uncomment the next line to enable admin documentation
+    'django.contrib.admindocs',
     'blog',
 ]
 
@@ -118,7 +121,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-#CMS_TOOLBAR_ANONYMOUS_ON = False
+CMS_TOOLBAR_ANONYMOUS_ON = True
 
 
 # Static files (CSS, JavaScript, Images)
