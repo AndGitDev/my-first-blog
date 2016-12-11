@@ -121,7 +121,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-CMS_TOOLBAR_ANONYMOUS_ON = True
+# CMS_TOOLBAR_ANONYMOUS_ON = True
 
 
 # Static files (CSS, JavaScript, Images)
