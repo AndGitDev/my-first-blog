@@ -1,41 +1,164 @@
 {% load staticfiles %}
-<html>
+
+<!DOCTYPE html>
+<html lang="ru">
     <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <title>Кібербезпека телефонів та комп`ютерів</title>    
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        
-	
+       <meta charset="utf-8" />
+      <link href="{% static "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" %}" rel="stylesheet">
+
+      <title>Кібербезпека телефонів та комп`ютерів</title>
+    	<link href="{% static "css/blog.css" %}" rel="stylesheet">
+
+      <link href= "{% static "//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" %}" rel="stylesheet" type="text/css">
+
+      <!-- Bootstr  ap Core CSS -->
+      <link href= "{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+      <link href= "{% static "css/custom.css" %}" rel="stylesheet">
+
+      <!-- Custom Fonts -->
+    <link href= "{% static "font-awesome-4.7.0/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+
     </head>
-   
+
     <body>
-    <div class="page-header">
+
+<!--
+	<nav class="navbar navbar-default" navbar-fixed-top>
+-->
+
+
+<!--
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+
+</nav>
+-->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+    <button typ="button" class="navbar-toggle"
+    data-toggle="collapse"
+    data-target=".navbar-collapse">
+        <span class="sr-only">
+            Toggle navigation
+        </span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <h4>Кібербезпека телефонів та комп`ютерів</h4>
+    </a>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'post_list' %}">Головна</a></li>
+        <!--<li><a href="/post/about" data-toggle="modal" data-target="#MyModal">Про сайт </a></li>-->
+        <li><a href="{% url 'post_about' %}">Про сайт </a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+          data-toggle="dropdown">Інформація<b class="caret"></b>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">Приклади</li>
+            <li><a href="#">C++</a></li>
+            <li><a href="#">Java</a></li>
+            <li class="dropdown-header">Tutorials</li>
+            <li><a href="#">C++</a></li>
+            <li><a href="#">Java</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+</div>
+</nav>
+
+<div id="MyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;
+        </button>
+        <h4 class="modal-title">
+          Modal Header
+        </h4>
+      </div>
+      <div class="modal-body">
+        <p> Já conhece nosso sérum hidratante?
+            Ele promove hidratação formando uma película de silicone protetora, que previne a perda da umidade natural da pele e deixa um toque 			incrivelmente macio e aveludado.Perfeito para as mãos e partes ressecadas do corpo!
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-header">
 	{% if user.is_authenticated %}
     	    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-	{% endif %}      
+	{% endif %}
 	<h1><a href="/">Сайт про кібербезпеку телефонів та комп`ютерів</a></h1>
     </div>
 
+    <!-- This tag gives opportunity displays content in all with on display -->
+    <div class="container-fluid">
+    <!--
     <div class="content container">
-
-
+-->
         <div class="row">
-
-
-            <div class="col-md-26">
-
-            {% block content %}
-            {% endblock %}
-
+            <div class="col-md-9">
+            	{% block content %}
+            	{% endblock %}
             </div>
-
+            <div class="col-md-3">
+            </div>
         </div>
-
-
+<!--
     </div>
+-->
 
+
+    <!-- Fixed footer -->
+
+      <div class="navbar navbar-inverse">
+        <div class="navbar-text pull-left">
+          <p>
+            <h4> © 2016 Всі права захищені.
+            Використання матеріалів з сайту «Безпека телефонів та комп'ютерів»
+            дозволено лише при наявності ативного посилання на джерело
+            </h4>
+          </p>
+        </div>
+        <div class="navbar-text pull-right">
+          <a href="https://www.facebook.com">
+            <i class="fa fa-facebook fa-2x"></i>
+          </a>
+          <a href="https://ok.ru/">
+            <i class="fa fa-odnoklassniki fa-2x" aria-hidden="true"></i>
+          </a>
+          <a href="https://vk.com/">
+            <i class="fa fa-vk fa-2x" aria-hidden="true"></i>
+          </a>
+        </div>
+    </div>
+  </div>
+
+    <!-- jQuery -->
+   <script src="{% static "js/jquery.js" %}"></script>
+
+   <!-- Bootstrap Core JavaScript -->
+   <script src="{% static "js/bootstrap.min.js" %}"></script>
 
     </body>
 </html>

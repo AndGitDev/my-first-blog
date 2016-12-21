@@ -26,7 +26,7 @@ SECRET_KEY = 'mnrh((5yk32h8w-hvj+%o5z8hn4xdf*axc2jy5+lg19@+7bq5&'
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-# was in tutorial of djangogirls 
+# was in tutorial of djangogirls
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 #ALLOWED_HOSTS = ['0.0.0.0']
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     # Uncomment the next line to enable admin documentation
     'django.contrib.admindocs',
     'blog',
+    'disqus',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -111,7 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'Europe/Uzhgorod'
 
@@ -120,6 +123,9 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+#DISQUS_API_KEY = '***'
+#DISQUS_WEBSITE_SHORTNAME = '***'
 
 # CMS_TOOLBAR_ANONYMOUS_ON = True
 
