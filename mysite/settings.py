@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     # Uncomment the next line to enable admin documentation
     'django.contrib.admindocs',
     'blog',
-    'disqus',
 ]
 
 MIDDLEWARE_CLASSES = [
